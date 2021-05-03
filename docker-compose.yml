@@ -3,6 +3,10 @@ services:
   app:
     build: .
     volumes: 
-        - ".:/goAuth"
+      - ".:/goAuth"
     tty: true
     stdin_open: true
+    environment: 
+      - GO111MODULE=on
+      - GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID
+      - GOOGLE_SECRET_ID=$GOOGLE_SECRET_ID
